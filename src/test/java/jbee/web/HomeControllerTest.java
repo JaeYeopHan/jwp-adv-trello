@@ -21,7 +21,7 @@ public class HomeControllerTest {
 
     @Before
     public void setUp() {
-        System.out.println("port number: " + serverPort);
+        log.info("port number: {}", serverPort);
         RestAssured.port = serverPort;
     }
 
@@ -35,7 +35,6 @@ public class HomeControllerTest {
             .statusCode(200)
             .extract()
             .asString();
-
-        System.out.println("body: " + body);
+        log.info("body: {}", body);
     }
 }
